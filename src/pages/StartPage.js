@@ -1,20 +1,21 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-// import Display Table
+import Table from "../components/Table"
 
 class StartPage extends Component {
   state = {
    
-    results: [],
+    employees: [],
     
   };
 
   // When the component mounts
   componentDidMount() {
     API.getEmployees()
-      .then(res => this.setState({ results: res.results }))
+      .then(res => this.setState({ employees: res.data.results }))
       .catch(err => console.log(err));
-      console.log(res.results)
+      console.log(res.data.results)
+      console.log(employees[1].name)
   }
 
 
@@ -24,12 +25,13 @@ class StartPage extends Component {
         <Container >
           <h1 className="text-center">Employee Directory</h1>
        
-          <DisplayTable
+          <Table 
 
-          //pass in prop values for DisplayTable
-            // handleFormSubmit={this.handleFormSubmit}
-            // handleInputChange={this.handleInputChange}
-            // breeds={this.state.breeds}
+          image={this.state.employees.picture.thumbnail}
+          name={this.state.employees.name}
+          contact={this.state.employees.email}
+          location={this.state.employees.location.city}
+         
           />
         </Container>
       </div>

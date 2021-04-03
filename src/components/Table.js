@@ -1,44 +1,36 @@
-import React from "react";
-import { useTable } from "react-table"
+import React from 'react';
 
-//***************************************** */
-//pull in data with API request here to define array?
+function Table(props) {
+	return (
+		<table>
+			{props.results.map((result) => (
+				<tr>
+					<td className="employee-cell image" key={result.id}>
+						<img alt={result.name.last} className="img-fluid" src={result.picture.medium} />
+					</td>
 
+					<td className="employee-cell last-name" key={result.id}>
+						{result.name.last}
+					</td>
 
-function Table({columns, data}) {
-    const {
-        getTableProps, // table props from react-table
-        getTableBodyProps, // table body props from react-table
-        // headerGroups, // headerGroups, if your table has groupings
-        rows, // rows for the table based on the data passed
-        prepareRow // Prepare the row (this function needs to be called for each row before getting the row props)
-      } = useTable({
-        columns,
-        data
-      });
+					<td className="employee-cell first-name" key={result.id}>
+						{result.name.first}
+					</td>
 
-  return (
-    <table {...getTableProps()}>
-        <thead>Employee Directory</thead>
-  
-    <tbody {...getTableBodyProps()}>
-      {rows.map((row, i) => {
-        prepareRow(row);// This line is necessary to prepare the rows and get the row props from react-table dynamically
+					<td className="employee-cell age" key={result.id}>
+						{result.dob.age}
+					</td>
 
-          // Each row can be rendered directly as a string using the react-table render method
-        return (
-          <tr {...row.getRowProps()}>
-            {row.cells.map(cell => {
-              return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>;
-            })}
-          </tr>
-        );
-      })}
-    </tbody>
-  </table>
-);
+					<td className="employee-cell contact" key={result.id}>
+						{result.email}
+					</td>
+
+					<td className="employee-cell location" key={result.id}>
+						{result.location.city}, {result.location.state}
+					</td>
+				</tr>
+			))}
+		</table>
+	);
 }
-
-
-
 export default Table;

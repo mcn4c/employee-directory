@@ -1,25 +1,29 @@
 import React from "react";
 
-function Filter(props) {
-  return (
-    <form>
-      <div className="form-group">
-        <label htmlFor="search">Search:</label>
-        <input
-          onChange={props.handleInputChange}
-          value={props.search}
-          name="search"
-          type="text"
-          className="form-control"
-          placeholder="Filter Table By City"
-          id="search"
-        />
-        <button onClick={props.handleFormSubmit} className="btn btn-primary mt-3">
-          Filter
-        </button>
-      </div>
-    </form>
-  );
-}
+
+function Filter(props){
+
+return(
+
+    
+  <form>
+  <div className="form-group">
+    <input
+      onChange={props.handleInputChange}
+      value={props.value}
+      name="filter"
+      type="text"
+      className="form-control"
+      placeholder="Filter by city name"
+      id="filter"
+    />    
+    <button onClick={props.handleFormSubmit} className="btn btn-primary">
+      Filter Table
+    </button>
+  </div>
+</form> 
+)
+  
+  }
 
 export default Filter;

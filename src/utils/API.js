@@ -1,8 +1,7 @@
-import axios from "axios";
-
+import axios from 'axios';
 
 export default {
-  getEmployees: function() {
-    return axios.get("https://randomuser.me/api/?results=25");
-  },
-}
+	getEmployees: function() {
+		return axios.get('https://randomuser.me/api/?results=100');
+	}
+};

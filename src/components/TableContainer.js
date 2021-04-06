@@ -62,6 +62,7 @@ class TableContainer extends Component {
 		console.log(this.state);
 		return (
 			<container>
+				<h4>Filter employees by country and sort them by age</h4>
 				<div className="filter-sort">
 					<div className="filter">
 						<Filter
@@ -80,7 +81,9 @@ class TableContainer extends Component {
 
 					{this.state.filter ? (
 						<Table
-							results={this.state.results.filter((result) => result.location.city === this.state.filter)}
+							results={this.state.results.filter(
+								(result) => result.location.country === this.state.filter
+							)}
 						/>
 					) : (
 						<Table results={this.state.results} />

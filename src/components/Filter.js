@@ -10,7 +10,7 @@ function Filter(props) {
 					name="filter"
 					type="text"
 					className="form-control"
-					placeholder="City name"
+					placeholder="Country"
 					id="filter"
 				/>
 				<button onClick={props.handleFormSubmit} className="btn btn-primary">

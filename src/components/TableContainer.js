@@ -50,9 +50,17 @@ class TableContainer extends Component {
 	};
 	sortByAge = (arr) => {
 		let sortedResult = arr.sort((a, b) => {
-			//use article
+			const ageA = a.dob.age;
+			const ageB = b.dob.age;
+
+			let comparison = 0;
+			if (ageA > ageB) {
+				comparison = 1;
+			} else if (ageA < ageB) {
+				comparison = -1;
+			}
+			return sortedResult;
 		});
-		return sortedResult;
 	};
 
 	//******************************************************** */
@@ -95,3 +103,28 @@ class TableContainer extends Component {
 }
 
 export default TableContainer;
+
+//********************************************************************* */
+
+//possible structure for nested if/else
+
+{
+	/* <h1>Data Loader!</h1>
+        { () => {
+            if (this.state.loading) { 
+                return (<h2>It is Loading.</h2>)
+            } else {
+                if (this.state.data) { 
+                    return (<h2>{this.state.data}</h2>)
+                } else {
+                    return <h2>There was no result!</h2> 
+                }
+            } */
+}
+
+//Nested ternary statements
+// const drink = dislikeCoke
+//     ? 'fanta'
+//     : likesCherry
+//         ? 'cherryCoke'
+//         : 'dietCoke';

@@ -8,16 +8,10 @@ This application can be used for viewing, filtering, and sorting a table of empl
 
  ## Table of Contents: 
 
-*[Installation](#installation) 
 *[Contribution](#contribution)
 *[Tests](#tests) 
 *[Questions](#questions)
 *[License](#license) 
-
-
-
-## Installation
-
 
 ## Contribution 
 
